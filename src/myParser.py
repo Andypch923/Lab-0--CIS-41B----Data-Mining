@@ -1,13 +1,13 @@
-from urllib.request import urlopen as uReq
-from bs4 import BeautifulSoup as soup
+import re
 class myParser:
     __rawData = ()
     def __init__(self,datafile):
-        page_html= open(datafile,"r")
+        page_html= open("Co2.html","r")
         """html parsing"""
-        page_soup = soup(page_html, "html.parser")
+        for x in page_html:
+          return  
         '''Stores each line with tag <td> into a list'''
-        DataLines = page_soup.findAll("td")
+        DataLines = list()
         '''creates a new list that removes the html tags off the values'''
         
         for s in DataLines:
@@ -22,5 +22,6 @@ class myParser:
 
     def getRawData(self):
         return self.__rawData
+        
 
     
